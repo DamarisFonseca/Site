@@ -31,11 +31,9 @@ ul {
 
 .hobby-img {
     border-radius: 15px;
-    max-width: 100%;
-    height: auto;
+    width: 400px;
     display: block;
     margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 table {
