@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Imagens</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .teste-img { max-width: 300px; height: auto; margin: 10px; border: 2px solid #ccc; }
+        .erro { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Teste de Carregamento de Imagens</h1>
+    
+    <h2>Teste 1: Imagem hobby.jpg</h2>
+    <img src="imagens/hobby.jpg" alt="Teste hobby" class="teste-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="erro" style="display:none;">ERRO: Não foi possível carregar hobby.jpg</div>
+    
+    <h2>Teste 2: Imagem pais1.jpg</h2>
+    <img src="imagens/pais1.jpg" alt="Teste pais1" class="teste-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="erro" style="display:none;">ERRO: Não foi possível carregar pais1.jpg</div>
+    
+    <h2>Teste 3: Imagem pais2.jpg</h2>
+    <img src="imagens/pais2.jpg" alt="Teste pais2" class="teste-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="erro" style="display:none;">ERRO: Não foi possível carregar pais2.jpg</div>
+    
+    <h2>Teste 4: Imagem pais3.jpg</h2>
+    <img src="imagens/pais3.jpg" alt="Teste pais3" class="teste-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="erro" style="display:none;">ERRO: Não foi possível carregar pais3.jpg</div>
+    
+    <h2>Teste 5: Caminho relativo alternativo</h2>
+    <img src="./imagens/hobby.jpg" alt="Teste caminho alternativo" class="teste-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <div class="erro" style="display:none;">ERRO: Não foi possível carregar com caminho alternativo</div>
+    
+    <script>
+        // Verificar se as imagens carregaram
+        window.onload = function() {
+            const imagens = document.querySelectorAll('img');
+            imagens.forEach((img, index) => {
+                if (img.complete && img.naturalHeight === 0) {
+                    console.log(`Imagem ${index + 1} falhou ao carregar:`, img.src);
+                } else {
+                    console.log(`Imagem ${index + 1} carregou com sucesso:`, img.src);
+                }
+            });
+        };
+    </script>
+</body>
+</html> 
